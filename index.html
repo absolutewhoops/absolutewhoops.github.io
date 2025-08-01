@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site do Fischer</title>
+    <link rel="shortcut icon" type="image/png" href="assets/imgs/fischewr.png">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="">
     <main>
         <section>
             <div class="container">
@@ -25,7 +26,7 @@
                     <p class="subtitulo"><i>Este é um site experimental feito pelo incrível programador <strong>Gustavo S. Fischer</strong></i></p>
                     <p class="mensagemOpcional"><b>Me avise se tiver alguma ideia do que eu poderia fazer nesse site :)</b></p>
 
-                    <button class="btnIdeia">Tenho uma ideia!</button>
+                    <button class="botao">Tenho uma ideia!</button>
                 </div>
 
                 <div class="fischewr-eminem">
@@ -42,5 +43,33 @@
     <footer>
         <p>2025 - Absolutamente nenhum direito reservado - Fischario Enterprises</p>
     </footer>
+
+    <div class="overlay">
+        <div class="popup">
+            <form class="popup__container">
+                <p class="popup__descricao"><b>Por favor escreva sua ideia na caixa de texto abaixo:</b></p>
+                <input class="popup__input" type="text" placeholder="Digite sua ideia aqui">
+                <button type="button" class="popup__botao">Enviar</button>
+                <button type="button" class="popup__botao popup__botao--fechar">X</button>
+            </form>
+        </div>
+
+        <div class="popupSorry">
+            <form class="popupSorry__container">
+                <p class="popupSorry__descricao">Opa! Me desculpe, esqueci de avisar que não estou a fim de pagar para ter uma hospedagem de verdade, então esse site não tem banco de dados pra guardar sua ideia. Então se você quiser mesmo mandar a ideia manda um e-mail pra mim em <strong><span class="realce">contatofischario@gmail.com</span></strong></p>
+                <button type="button" class="popupSorry__botao">Copiar e-mail</button>
+                <button type="button" class="popupSorry__botao popupSorry__botao--fechar">X</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="msgEmailCopiado">
+        <form class="msgEmailCopiado__container">
+            <p>e-mail copiado para área de transferência</p>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+     <script src="scripts.js"></script>
 </body>
 </html>

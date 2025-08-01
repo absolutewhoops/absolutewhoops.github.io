@@ -50,7 +50,7 @@ footer {
     align-items: center;
 }
 
-.btnIdeia {
+.botao {
     width: 200px;
     height: 60px;
     color: white;
@@ -66,7 +66,7 @@ footer {
     cursor: pointer;
 }
 
-.btnIdeia:hover {
+.botao:hover {
     border-right-width: 3px;
     border-bottom-width: 3px;
     border-top-width: 3px;
@@ -96,4 +96,231 @@ footer {
     border-radius: 20px;
     padding: 6px;
     border: 3px solid #000000;
+}
+
+@keyframes in {
+    0%   { opacity: 0; }
+    100%  { opacity: 1; }
+}
+
+@keyframes out {
+    0%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(3px);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+}
+
+/* Popup */
+
+.popup__botao {
+    width: 100px;
+    height: 40px;
+    color: white;
+    background-color: #006685;
+    border-radius: 50px;
+    font-family: "", sans-serif;
+    font-size: 20px;
+    border: 3px solid #004b62;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    cursor: pointer;
+}
+
+.popup__botao:hover {
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-top-width: 3px;
+    border-left-width: 3px;
+}
+
+.popup {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    /* background-color: rgb(0 0 0 / 60%);
+    backdrop-filter: blur(3px); */
+}
+
+.popup__container {
+    position: relative;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 30px;
+    box-shadow: 0 0 0 4px #004b62;
+}
+
+.popup__input {
+    font-size: medium;
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: 3px solid #004b62;
+    width: 400px;
+    background-color: transparent;
+    color: white;
+    outline: none;
+}
+
+.popup__descricao {
+    font-size: medium;
+}
+
+.popup__botao--fechar {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: x-large;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.popup--aberto .popup{
+    display: flex;
+    animation: in 0.2s forwards;
+}
+
+.popup--fechando .popup {
+    display: flex;
+    animation: out 0.2s forwards;
+}
+
+.popup__input.erro {
+    border: 3px solid red;
+}
+
+/* PopupSorry */
+
+.popupSorry__botao {
+    width: 150px;
+    height: 40px;
+    color: white;
+    background-color: #006685;
+    border-radius: 50px;
+    font-family: "", sans-serif;
+    font-size: 20px;
+    border: 3px solid #004b62;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    cursor: pointer;
+}
+
+.popupSorry__botao:hover {
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-top-width: 3px;
+    border-left-width: 3px;
+}
+
+.popupSorry {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    /* background-color: rgb(0 0 0 / 60%);
+    backdrop-filter: blur(3px); */
+}
+
+.popupSorry__container {
+    position: relative;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    background-color: #1e1e1e;
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 0 0 0 4px #004b62;
+}
+
+.popupSorry__descricao {
+    font-size: large;
+    width: 600px;
+    text-align: justify;
+}
+
+.popupSorry__botao--fechar {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: x-large;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.popupSorry--aberto .popupSorry {
+    display: flex;
+    animation: in 0.2s forwards;
+}
+
+.popupSorry--fechando .popupSorry {
+    display: flex;
+    animation: out 0.2s forwards;
+}
+
+.realce {
+    color: #05968a;
+}
+
+
+.popup--aberto .overlay,
+.popupSorry--aberto .overlay {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* MsgEmailCopiado */
+
+.msgEmailCopiado {
+    position: fixed;
+    display: none;
+    padding: 20px;
+    justify-content: end;
+    align-items: start;
+    inset: 0;
+    /* background-color: rgb(0 0 0 / 60%);
+    backdrop-filter: blur(3px); */
+}
+
+.msgEmailCopiado__container {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 4px #019125;
+}
+
+@keyframes in-out {
+    0%   { opacity: 0; }
+    20%  { opacity: 1; }
+    80%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.msgEmailCopiado--aberto .msgEmailCopiado {
+    display: flex;
+    animation: in-out 1.8s forwards;
 }

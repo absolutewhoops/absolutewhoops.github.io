@@ -40,7 +40,7 @@ document.querySelectorAll("button").forEach(function (botao) {
     }
     if (botao.className == "popupSorry__botao"){
         botao.addEventListener("click", function () {
-            navigator.clipboard.writeText("contatofischario@gmail.com");
+            navigator.clipboard.writeText(chavePix());
             mostrarMensagemCopiada();
             corpoLista.remove("popupSorry--aberto")
             corpoLista.remove("popup--aberto");
@@ -49,14 +49,14 @@ document.querySelectorAll("button").forEach(function (botao) {
 });
 
 function mostrarMensagemCopiada() {
-    document.body.classList.add("msgEmailCopiado--aberto");
+    document.body.classList.add("msgPixCopiado--aberto");
 
-    const classeEmail = document.querySelector(".msgEmailCopiado");
+    const classeEmail = document.querySelector(".msgPixCopiado");
     if (!classeEmail) return;
 
     function onAnimationEnd(e) {
         if (e.animationName == "in-out") {
-        document.body.classList.remove("msgEmailCopiado--aberto");
+        document.body.classList.remove("msgPixCopiado--aberto");
         classeEmail.removeEventListener("animationend", onAnimationEnd);
         }
     }
@@ -86,4 +86,9 @@ function fecharPopupComAnim(nome) {
     }
 
     elemento.addEventListener("animationend", onAnimationEnd);
+}
+
+function chavePix() {
+    const chavePix = 'd4079b4b-814c-4762-b431-fd5f48fa8c5c';
+    return chavePix;
 }
